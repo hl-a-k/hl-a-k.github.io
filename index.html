@@ -1,80 +1,34 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html lang="en">
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <style>
-    div.contain {
-      border: 1px solid;
-    }
-
-    div.title {
-      font-size: 2em;
-    }
-
-  </style>
+  <title>Resume</title>
+  <script src="https://unpkg.com/vue"></script>
 </head>
-
 <body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <div class="contain">
-    <div class="title blue">聚焦编程竞赛, 助力学生走上成功大道</div>
-    <p>为什么要参加编程竞赛？</p>
-    <ul>
-      <li><a href="https://all-dream.com/mkt/NOIP7pc.html?p=2BD-PCnoip-pnoip-PC&BD=noip&e_creative=24310262202&e_keywordid=88286431513">名校直接录取</a></li>
-      <li>随着人工智能的进步， 越来越多的职业将被计算机取代。 现在的金饭碗，比如律师、会计、医生也不能幸免。学习编程是最好的选择</li>
-      <li>目前学校的教材还是相对落后， 编程相关的内容偏少。 如果让学生在初高中参加编程培训，可以学生先人一步</li>
-      <li>在国际化的编程比赛中获奖(google每年举办的编程比赛，topcoder经常举办的编程比赛)，可以获得google FB等公司的offer.</li>
-    </ul>
-  </div>
-
-  <div class="contain">
-    <div class="title green">宝马觅伯乐</div>
-    <p>编程竞赛培训很难， 并不是随便什么人就可以做的，我是否能胜任？</p>
-    我在初中时，有拿的过全国奥市第一名的名次。但这个年代有点久远了。
-    <br>
-    现在，我有在<a href="https://baike.baidu.com/item/Topcoder/10739493" target="_blank"> topcoder </a> 上刷题。
-    <a href="https://www.topcoder.com/members/hl_a_k">这里可以看我的参赛信息</a>
-    <img src="./stat.png">
-    <a href="https://blog.csdn.net/chenyiyue/article/details/51729150" target="_blank"> 我的竞赛水平和扎克伯格差不多 </a>
-  </div>
-
-  <di class="contain">
-    <div class="title yellow">合作共赢， 共筑未来</div>
-    <pre>
-      你有学校
-      我有能力
-      我们有市场
-    </pre>
-  </di>
+<div id="app">
+  {{ message }}
+</div>
 
 
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+</script>
 </body>
-
 </html>
