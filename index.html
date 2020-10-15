@@ -9,13 +9,66 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
   <title>Resume of Omar.Zhou</title>
-  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+  <style>
+    .bg_title {
+      background-color: rgb(46, 188, 174);
+    }
+    .text_title {
+      color: rgb(46, 188, 174);
+      border-color: rgb(46, 188, 174)!important;
+      border-width: 2px!important;
+    }
+  </style>
 </head>
 <body>
-<div id="app">
-  {{ message }}
-</div>
 
+
+<div id="app" style="margin-top: 2em">
+  <div class="container-fluid" >
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <img src="img/profile.jpg" alt="profile" class="img-thumbnail rounded-circle">
+        <div style="text-align: center">
+          <img src="img/location.png" style="width: 1.5em">
+          <div>China</div>
+        </div>
+        <hr />
+        <h1 class="h3 text_title">SKILLS</h1>
+        <div v-for="(skill,i) in skills">
+            {{skill.title}}
+            <div class="progress">
+              <div class="progress-bar" v-bind:class="[skill.bg]" role="progressbar" :style="{width: skill.percent + '%'}" v-bind:aria-valuenow="skill.percent" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="bg_title text-white" style="padding-left: 1em; padding-right: 1em">
+          <h1 class="h2">Omar.Zhou</h1>
+          <div class="border-bottom">
+            Software Engineer
+          </div>
+          <div>
+            {{intro}}
+          </div>
+        </div>
+
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title">
+            WORK EXPERIENCE
+          </div>
+          <div>
+            {{intro}}
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -23,10 +76,110 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script>
-  var app = new Vue({
+  let skillBg = ['bg-dark', 'bg-success', 'bg-primary', 'bg-warning', 'bg-danger']
+  let skills = [
+    {
+      title: 'Leadership, Creative, Passion',
+      percent: 100
+    },
+    {
+      title: 'Agile, tools...',
+      percent: 60
+    },
+    {
+      title: 'Algorithm',
+      percent: 80
+    },
+    {
+      title: 'Java',
+      percent: 85
+    },
+    {
+      title: 'Es6',
+      percent: 80
+    },
+    {
+      title: 'Python',
+      percent: 60
+    },
+    {
+      title: 'C,C++',
+      percent: 40
+    },
+    {
+      title: 'Swift',
+      percent: 30
+    },
+    {
+      title: 'PHP',
+      percent: 20
+    },
+    {
+      title: 'HTML,CSS',
+      percent: 50
+    },
+    {
+      title: 'Spring...',
+      percent: 60
+    },
+    {
+      title: 'cloud',
+      percent: 60
+    },
+    {
+      title: 'mybatis, hibernate',
+      percent: 60
+    },
+    {
+      title: 'React',
+      percent: 70
+    },
+    {
+      title: 'Vue',
+      percent: 20
+    },
+    {
+      title: 'Electron',
+      percent: 60
+    },
+    {
+      title: 'Linux',
+      percent: 70
+    },
+    {
+      title: 'Nginx, Docker, K8s',
+      percent: 40
+    },
+    {
+      title: 'AWS, Alibabacloud, Ansible',
+      percent: 30
+    },
+    {
+      title: 'Git',
+      percent: 30
+    }
+  ].map(s=>{
+    s.bg = skillBg[parseInt((s.percent - 1) / 20)]
+    return s
+  })
+
+  new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue!'
+      skills,
+      intro: "I have been working as a software engineer since 2010. I'm a passionate people who good at solving problems." +
+              " I'm a very deep and pragmatic person. My dream is to keep the world in balance." +
+              " But I always know that I must survive first. So I will be a good employee because there is a belief that drives me forward.  ",
+      experience: [
+        {
+          title: "Team leader",
+          company: "",
+          range: "09/2019 - ",
+          accomplishment: [
+
+          ]
+        }
+      ]
     }
   })
 </script>

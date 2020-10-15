@@ -1,0 +1,23 @@
+{
+  "name": "hl-a-k.github.io",
+  "version": "1.0.0",
+  "description": "This is my resume.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files '.'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hl-a-k/hl-a-k.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hl-a-k/hl-a-k.github.io/issues"
+  },
+  "homepage": "https://github.com/hl-a-k/hl-a-k.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12"
+  }
+}
