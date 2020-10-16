@@ -25,7 +25,7 @@
 <body>
 
 
-<div id="app" style="margin-top: 2em">
+<div id="app" style="margin-top: 2em;  margin-bottom: 2em">
   <div class="container-fluid" >
     <div class="row">
       <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -57,14 +57,57 @@
         </div>
 
         <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
-          <div class="border-bottom text_title">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
             WORK EXPERIENCE
           </div>
-          <div>
-            {{intro}}
+          <div v-for="(exp,i) in experience" style="margin-bottom: 1em">
+            <span style="font-weight: bold" class="text_title">{{exp.title}}</span>
+            <div>{{exp.company}}</div>
+            <span class="text_title" style="font-style: italic; font-size: 0.9em">{{exp.range}}</span>
+            <ul style="list-style-image:url('img/ul.png');  margin-left: -1.5em">
+              <li v-for="(acc) in exp.accomplishment">{{acc}}</li>
+            </ul>
           </div>
         </div>
 
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
+            EDUCATION
+          </div>
+          <span style="font-weight: bold" class="text_title">
+            Macromolecule - Bachelor’s Degree
+          </span>
+          <div>
+            QIQIHAR UNIVERSITY
+          </div>
+          <span class="text_title" style="font-style: italic; font-size: 0.9em">2005-2009</span>
+        </div>
+
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
+            CERTIFICATION
+          </div>
+          <div>
+            SCJP
+          </div>
+          <div>
+            TOEFL/80
+          </div>
+        </div>
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
+            LINKS
+          </div>
+          <div>
+            <a href="http://thinkinlife.org/everything-is-meaningless/">personal blog</a>
+          </div>
+          <div>
+            <a href="https://www.topcoder.com/members/hl_a_k">Topcoder profile</a>
+          </div>
+          <div>
+            <a href="https://github.com/hl-a-k">Github profile</a>
+          </div>
+        </div>
       </main>
     </div>
   </div>
@@ -169,16 +212,76 @@
       skills,
       intro: "I have been working as a software engineer since 2010. I'm a passionate people who good at solving problems." +
               " I'm a very deep and pragmatic person. My dream is to keep the world in balance." +
-              " But I always know that I must survive first. So I will be a good employee because there is a belief that drives me forward.  ",
+              " But I always know that I must survive first. I will be a good employee because there is a belief that drives me forward.  ",
       experience: [
         {
-          title: "Team leader",
-          company: "",
-          range: "09/2019 - ",
+          title: "Senior Software Engineer",
+          company: "Geeboo",
+          range: "04/2019 - present",
           accomplishment: [
-
+            "Provided technical solutions for A Game Booster. Solved 3proxy's UDP block problem, determined using Electron replace C#, used Java to control 3proxy that I can control traffic precisely without writing C codes(The project delay for eight months until my team take charge.).",
+            "Team manage/Scrum Master",
+            "Determined to use Docker, K8S.",
+            "Improve Mybatis's query efficiency by adding customized pagination",
+            "Build the ops system, include CI/CD, ansible, log system."
+          ]
+        },
+        {
+          title: "Freelancer",
+          company: "",
+          range: "06/2017 - 03/2019",
+          accomplishment: [
+            "Maintain an ERP and an e-shop system for a local company.",
+            "Build a desktop application using Electron for parsing pdf files, stamp pdf files for a customer online. Build another desktop application using Electron, Puppeteer, for scratch data from some websites for the same client.",
+            "Won a few challenges in Topcoder.",
+          ]
+        },
+        {
+          title: "Senior Software Engineer",
+          company: "GWCHINA",
+          range: "03/2015 - 05/2017",
+          accomplishment: [
+            "Provide technical solutions for an in-class application. By using Syncthing, Sqlite, Java. Teachers can prepare material at home and using the application in class. (Company close to giving up this project).",
+            "Setup team's development service, include setup Nexus, code standard plugin.",
+            "Determined to use Ionic.",
+            "Build a word parse engine."
+          ]
+        },
+        {
+          title: "Team leader",
+          company: "IMAGETRANS",
+          range: "03/2014 - 04/2015",
+          accomplishment: [
+            "Lead a team to maintain a website like booking.com.",
+          ]
+        },
+        {
+          title: "Software engineer",
+          company: "EPCARE",
+          range: "04/2013 - 02/2014",
+          accomplishment: [
+            "Maintain an EDM system.",
+            "Provide technical a solution for the Greyhat SEO system by using phantoms, capers, and lots of IPs, creating a Mocker, which can simulate human behaviors. "
+          ]
+        },
+        {
+          title: "Software Engineer",
+          company: "Sinoservices",
+          range: "09/2011 - 03/2013",
+          accomplishment: [
+                  "Participate in WMS development.",
+                  "Create a visualization Dock schedule system. I use a rectangle to represent how long a car will occupy a dock. Clients can know how busy the Dock by a glance and avoid schedule conflict because the overlap area of two rectangles is red. "
+          ]
+        },
+        {
+          title: "Junior programmer",
+          company: "NFKY",
+          range: "05/2010 - 09/2011",
+          accomplishment: [
+                  "Create an excel import module. The module is configurable by using configuration files and Java reflection, so It does not need to create a new module for a different format. It will be valid the file before import, and mark the error with a red background. It does save a lot of time for clients."
           ]
         }
+
       ]
     }
   })
