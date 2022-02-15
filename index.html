@@ -187,14 +187,14 @@
     },
     {
       title: 'Vue',
-      percent: 20
+      percent: 40
     },
     {
       title: 'Electron',
       percent: 60
     },
     {
-      title: 'Linux',
+      title: 'Linux (server & embedded)',
       percent: 70
     },
     {
@@ -208,6 +208,10 @@
     {
       title: 'Git',
       percent: 30
+    },
+    {
+      title: 'network programming',
+      percent: 50
     }
   ].map(s=>{
     s.bg = skillBg[parseInt((s.percent - 1) / 20)]
@@ -224,8 +228,18 @@
       experience: [
         {
           title: "Senior Software Engineer",
+          company: "ABB",
+          range: "12/2020 - present",
+          accomplishment: [
+            "Participate in developing a new Panel. This panel is a smart home device that can control other DES, smart home devices use KNX protocols, 2wires protocols via wifi and carrier communication.  OS is embedded Linux.  Build system is Yocto. The programming language is C. We use one imx6ull and two stm32f407. My work is developing some applications for this device such as setting, video player, audio player, gateway, etc.",
+            "Maintain a legacy PC application written in Java which use to control smart  home device such as outdoor station, indoor station. ",
+            "Developing some features for SmartAp, Pcmanager use Qooxdoo (an javascript UI framework)",
+          ]
+        },
+        {
+          title: "Senior Software Engineer",
           company: "Geeboo",
-          range: "04/2019 - present",
+          range: "04/2019 - 12/2020",
           accomplishment: [
             "Provided technical solutions for A Game Booster. Solved 3proxy's UDP block problem, determined using Electron replace C#, used Java to control 3proxy that I can control traffic precisely without writing C codes(The project delay for eight months until my team take charge.).",
             "Team manage/Scrum Master",
