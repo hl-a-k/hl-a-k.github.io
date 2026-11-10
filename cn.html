@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"> 
+  <title>周文瀚的简历</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+  <style>
+    .bg_title {
+      background-color: rgb(46, 188, 174);
+    }
+    .text_title {
+      color: rgb(46, 188, 174);
+      border-color: rgb(46, 188, 174)!important;
+      border-width: 2px!important;
+    }
+  </style>
+</head>
+<body>
+
+
+<div id="app" style="margin-top: 2em;  margin-bottom: 2em">
+  <div class="container-fluid" >
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <img src="img/profile.jpg" alt="profile" class="img-thumbnail rounded-circle">
+        <div style="text-align: center">
+          <img src="img/location.png" style="width: 1.5em">
+          <div>China</div>
+        </div>
+        <hr />
+        <h1 class="h3 text_title">SKILLS</h1>
+        <div v-for="(skill,i) in skills">
+            {{skill.title}}
+            <div class="progress">
+              <div class="progress-bar" v-bind:class="[skill.bg]" role="progressbar" :style="{width: skill.percent + '%'}" v-bind:aria-valuenow="skill.percent" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="bg_title text-white" style="padding-left: 1em; padding-right: 1em">
+          <h1 class="h2">周文瀚</h1>
+          <div class="border-bottom">
+            程序员/创新工程师
+          </div>
+          <div>
+            {{intro}}
+          </div>
+        </div>
+
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
+            WORK EXPERIENCE
+          </div>
+          <div v-for="(exp,i) in experience" style="margin-bottom: 1em">
+            <span style="font-weight: bold" class="text_title">{{exp.title}}</span>
+            <div>{{exp.company}}</div>
+            <span class="text_title" style="font-style: italic; font-size: 0.9em">{{exp.range}}</span>
+            <ul style="list-style-image:url('img/ul.png');  margin-left: -1.5em">
+              <li v-for="(acc) in exp.accomplishment">{{acc}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
+            EDUCATION
+          </div>
+          <span style="font-weight: bold" class="text_title">
+            Macromolecule - Bachelor’s Degree
+          </span>
+          <div>
+            QIQIHAR UNIVERSITY
+          </div>
+          <span class="text_title" style="font-style: italic; font-size: 0.9em">2005-2009</span>
+        </div>
+
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
+            CERTIFICATION
+          </div>
+          <div>
+            SCJP
+          </div>
+          <div>
+            TOEFL/80
+          </div>
+        </div>
+        <div style="padding-left: 1em; padding-right: 1em; margin-top: 1em">
+          <div class="border-bottom text_title" style="font-size: 1.2em; font-weight: bold">
+            LINKS
+          </div>
+          <div>
+            <a href="http://thinkinlife.org/everything-is-meaningless/">personal blog</a>
+          </div>
+          <div>
+            <a href="https://www.topcoder.com/members/hl_a_k">Topcoder profile</a>
+          </div>
+          <div>
+            <a href="https://github.com/hl-a-k">Github profile</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script> 
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+  let skillBg = ['bg-dark', 'bg-success', 'bg-primary', 'bg-warning', 'bg-danger']
+  let skills = [
+    {
+      title: 'Leadership, Creative, Passion',
+      percent: 100
+    },
+    {
+      title: 'Innovation, hands-on',
+      percent: 100
+    },
+    {
+      title: 'Agile, tools...',
+      percent: 60
+    },
+    {
+      title: 'Algorithm',
+      percent: 80
+    },
+    {
+      title: 'Electromagnetism, Circuits',
+      percent: 60
+    },
+     {
+      title: 'API design',
+      percent: 80
+    },
+    {
+      title: 'Reactive programing techniques',
+      percent: 10
+    },
+    {
+      title: 'Java7/Java8',
+      percent: 85
+    },
+    {
+      title: 'Es6',
+      percent: 80
+    },
+    {
+      title: 'Python',
+      percent: 60
+    },
+    {
+      title: 'Rust',
+      percent: 40
+    },
+    {
+      title: 'C,C++',
+      percent: 40
+    },
+    {
+      title: 'Swift',
+      percent: 30
+    },
+    {
+      title: 'PHP',
+      percent: 20
+    },
+    {
+      title: 'HTML,CSS',
+      percent: 50
+    },
+    {
+      title: 'Spring frameworks, Springboot...',
+      percent: 60
+    },
+    {
+      title: 'cloud',
+      percent: 60
+    },
+    {
+      title: 'mybatis, hibernate',
+      percent: 60
+    },
+    {
+      title: 'React',
+      percent: 70
+    },
+    {
+      title: 'Vue',
+      percent: 40
+    },
+    {
+      title: 'Electron',
+      percent: 60
+    },
+    {
+      title: 'Linux (server & embedded)',
+      percent: 70
+    },
+    {
+      title: 'Nginx, Docker, Kubernetes & service mesh',
+      percent: 40
+    },
+    {
+      title: 'AWS, Alibabacloud, Ansible',
+      percent: 30
+    },
+    {
+      title: 'Git',
+      percent: 30
+    },
+    {
+      title: 'network programming',
+      percent: 50
+    }
+  ].map(s=>{
+    s.bg = skillBg[parseInt((s.percent - 1) / 20)]
+    return s
+  })
+
+  new Vue({
+    el: '#app',
+    data: {
+      skills,
+      intro: 
+      "我在2010年开启我的职业生涯。我主要从事软件开发相关的工作。我是一个充满好奇心, 又擅长解决问题的人。" +
+      "我能抓住事物的本质同时我也非常务实。 我的梦想是让世界保持平衡, 但我先努力生活着。" + 
+      "我会是一名很好的员工因为我有信念。",
+
+      experience: [
+        {
+          title: "创新工程师",
+          company: "自雇",
+          range: "4/2026 - present",
+          accomplishment: [
+            "做出目前性能最好的点炭器",
+            "设计出最轻的AI眼镜方案",
+            "设计出高性能运动鞋方案",
+            "开发全新金属焊接工艺",
+            "旧系统安全策略，涉及数据存储、程序运行时、网关",
+            "通用电池方案。 核心在于快速给出电池估值"
+          ]
+        },
+        {
+          title: "高级程序员",
+          company: "厦门安泰新能源科技有限公司",
+          range: "4/2024 - 3/2026",
+          accomplishment: [
+            "开发出全地形逆跟踪算法",
+            "风雪荷载数据读取功能。",
+            "独立设计并开发电站SCADA系统，涉及服务端及手机端",
+          ]
+        },
+        {
+          title: "高级程序员",
+          company: "厦门ABB智能科技有限公司",
+          range: "12/2020 - 3/2024",
+          accomplishment: [
+            "参与新的智能家居面板应用程序开发。该面积通过KNX、两线等协议控制全屋智能家居。操作系统是嵌入式Linux, 使用Yocto编译，开发语言是C. 使用了一颗imx6ull芯片及两颗stm32f407芯片。 我主要负责音视频、网关等模块开发",
+            "对旧的PC管理软件进行维护。",
+            "对SmartAp, Pcmanager进行维护， 技术栈是 Qooxdoo (a javascript UI framework)",
+          ]
+        },
+        {
+          title: "高级程序员",
+          company: "简帛",
+          range: "04/2019 - 12/2020",
+          accomplishment: [
+            "开发了一款游戏加速器。 解决了3proxy UDP阻塞问题。 决定使用Electron代替C#, 使用Java控制3proxy使得可能不修改C代码的前提下精确控制流量（该项目延期了8个月直到我接手）",
+            "团队管理/敏捷大师",
+            "决定使用 Docker, K8S.",
+            "开发 Mybatis插件",
+            "开发了运维系统，包括 CI/CD, ansible, log system."
+          ]
+        },
+        {
+          title: "Freelancer",
+          company: "",
+          range: "06/2017 - 03/2019",
+          accomplishment: [
+            "帮当地工厂维护ERP及电商系统",
+            "使用Electron开发pdf解析、处理程序。同时基于Electron和Puppeteer开发了数据抓取功能。",
+            "在Topcoder赢下不少比赛",
+          ]
+        },
+        {
+          title: "高级程序员",
+          company: "绿网天下（福建）网络科技股份有限公司",
+          range: "03/2015 - 05/2017",
+          accomplishment: [
+            "为班级上课软件提供技术解决方案。关键使用Syncthing，Sqlite 解决备课数据和上课数据同步的问题。(公司基本决定放弃该项目，直到我的方案解决了关键问题)",
+            "搭建基础开发服务，如Nexus搭建, code standard plugin开发.",
+            "决定使用Ionic.",
+            "开发world解析引擎."
+          ]
+        },
+        {
+          title: "技术经理",
+          company: "IMAGETRANS",
+          range: "03/2014 - 04/2015",
+          accomplishment: [
+            "维护了一个类似booking.com的网站.",
+          ]
+        },
+        {
+          title: "程序员",
+          company: "EPCARE",
+          range: "04/2013 - 02/2014",
+          accomplishment: [
+            "EDM系统维护.",
+            "开发了IP可信度提升的工具。 用到的技术有：phantoms, capers, 和大量的IPs。 实现通过简单操作，就可以模拟大量人类操作 "
+          ]
+        },
+        {
+          title: "程序员",
+          company: "锐特信息",
+          range: "09/2011 - 03/2013",
+          accomplishment: [
+                  "参与WMS系统开发",
+                  "开发了可视化月台调试功能。用矩形代表月台占用时间，如果时间重叠，会标识为红色，在当时算是巨大的创新。  "
+          ]
+        },
+        {
+          title: "初级程序员",
+          company: "南方科宇",
+          range: "05/2010 - 09/2011",
+          accomplishment: [
+                  "开发了个Excel解析模块，基于java的反射机制。实现了当需要增加类型时，只需要增加规则模板即。"
+          ]
+        }
+
+      ]
+    }
+  })
+</script>
+</body>
+</html>
